@@ -1,0 +1,74 @@
+user (crud) //done
+{
+    CustomerID (Primary Key)
+    FirstName
+    LastName
+    Email
+    Password 
+    Address
+    Phone
+}
+
+
+chef(crud) 
+{
+    ChefID (Primary Key)
+    RestaurantID (Foreign Key referencing Restaurants)
+    FirstName
+    LastName
+    Specialties
+}
+
+meals(crud) //done
+{
+    RecipeID (Primary Key)
+    RestaurantID (Foreign Key referencing Restaurants)
+    Name
+    Description
+    ChefID (Foreign Key referencing Chefs)
+    Ingredients (a list or text field)
+    PreparationSteps (a text field)
+    Price (if the recipe is offered as a menu item)
+    ImageURL (for displaying recipe images)
+    
+}
+
+blog and post (crud) //wait
+{
+    PostID (Primary Key)
+    RestaurantID (Foreign Key referencing Restaurants)
+    Title
+    Content (text field or rich text)
+    Author (e.g., the authors name or ID)
+    PublicationDate
+    ImageURL (for blog post images)
+}
+
+review and rating (cr) //done
+{
+    ReviewID (Primary Key)
+    RestaurantID (Foreign Key referencing Restaurants)
+    CustomerID (Foreign Key referencing Customers)
+    Rating (e.g., on a scale of 1 to 5)
+    ReviewText
+    ReviewDate
+}
+
+customer feedback (cr) //done
+{
+    FeedbackID (Primary Key)
+    RestaurantID (Foreign Key referencing Restaurants)
+    CustomerID (Foreign Key referencing Customers)
+    Subject
+    FeedbackText
+    FeedbackDate
+}
+
+payment(cr) //done
+{
+    PaymentID (Primary Key)
+    OrderID (Foreign Key referencing Orders)
+    PaymentDate
+    Amount
+    PaymentMethod (e.g., credit card, PayPal)
+    }
